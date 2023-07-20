@@ -8,7 +8,6 @@ const Main: React.FC<{ children: React.JSX.Element | React.JSX.Element[] }> = ({
     const result = mainSection.current.className.split(' ')
     result[0] = 'opacity-100'
     mainSection.current.className = result.join(' ')
-    console.log(mainSection.current.className)
   }, [])
 
   return (
