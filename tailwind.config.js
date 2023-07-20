@@ -3,10 +3,24 @@ module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/containers/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
+      colors: {
+        primary: '#071330',
+        secondary: '#0C4160',
+        background: '#C3CEDA',
+        layout: '#738FA7',
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
+
+      fontFamily: {
+        mono: ['Roboto Mono', 'monospace'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
