@@ -21,9 +21,9 @@ const InfoAboutMe: React.FC = () => (
           ratione magnam repellat quibusdam distinctio!
         </code>
         <div className="flex absolute top-5 right-5">
+          <GoDot size={25} className="cursor-pointer" />
+          <GoDot size={25} className="cursor-pointer" />
           <GoDotFill size={25} className="cursor-pointer" />
-          <GoDot size={25} className="cursor-pointer" />
-          <GoDot size={25} className="cursor-pointer" />
         </div>
         <div className="absolute bottom-10 right-10 flex gap-4">
           <FaGithubSquare
