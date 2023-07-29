@@ -2,13 +2,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 import { FaReact } from 'react-icons/fa'
-import { RiJavascriptLine } from 'react-icons/ri'
-import { TbBrandTypescript } from 'react-icons/tb'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SkillCard from '../SkillCard'
 
-const Skills = () => (
+const Skills: React.FC<{ skillsData: Array<any> }> = ({ skillsData = [] }) => (
   <div className=" mx-auto max-w-6xl pt-24 flex w-full  flex-wrap justify-between ">
     <Swiper
       className="h-[400px] f w-full"
@@ -22,131 +20,23 @@ const Skills = () => (
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="rotate-3"
-          title="React"
-          icons={<FaReact size={60} className="animate-spin-slow" />}
-        />
-      </SwiperSlide>
-
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="-rotate-1"
-          title="Javascript"
-          icons={<RiJavascriptLine size={60} className="animate-pulse" />}
-        />
-      </SwiperSlide>
-
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="rotate-3"
-          title="Typescript"
-          icons={<TbBrandTypescript size={60} className="animate-bounce" />}
-        />
-      </SwiperSlide>
-
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="rotate-3"
-          title="React"
-          icons={<FaReact size={60} className="animate-spin-slow" />}
-        />
-      </SwiperSlide>
-
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="-rotate-1"
-          title="Javascript"
-          icons={<RiJavascriptLine size={60} className="animate-pulse" />}
-        />
-      </SwiperSlide>
-
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="rotate-3"
-          title="Typescript"
-          icons={<TbBrandTypescript size={60} className="animate-bounce" />}
-        />
-      </SwiperSlide>
-
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="rotate-3"
-          title="React"
-          icons={<FaReact size={60} className="animate-spin-slow" />}
-        />
-      </SwiperSlide>
-
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="-rotate-1"
-          title="Javascript"
-          icons={<RiJavascriptLine size={60} className="animate-pulse" />}
-        />
-      </SwiperSlide>
-
-      <SwiperSlide
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SkillCard
-          rotate="rotate-3"
-          title="Typescript"
-          icons={<TbBrandTypescript size={60} className="animate-bounce" />}
-        />
-      </SwiperSlide>
+      {skillsData.map((elm: any) => (
+        <SwiperSlide
+          // eslint-disable-next-line no-underscore-dangle
+          key={elm._id}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <SkillCard
+            rotate="rotate-0"
+            title={elm.Title}
+            icons={<FaReact size={60} className="hover:animate-pulse " />}
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   </div>
 )

@@ -12,9 +12,14 @@ import Skills from '@/components/Skills'
 import InfoAboutMe from '@/components/InfoAboutMe'
 import { useEffect, useState } from 'react'
 import { Toaster, toast } from 'react-hot-toast'
+import { NextPage } from 'next'
+import axios from 'axios'
 
-export default function Home() {
+const Home: NextPage = (props) => {
   const [online, setOnline] = useState(true)
+
+  const { data }: any = props
+
   //  typeof window
   const handelOnline = () => {
     setOnline(navigator.onLine)
@@ -54,7 +59,7 @@ export default function Home() {
 
         <link rel="manifest" href="/manifest.json" />
       </Head>
-      <LandingPage />
+      <LandingPage data={data.res.Profile} />
       <MdDeveloperMode
         className="absolute transition-all duration-300 right-20 top-40 animate-pulse text-primary "
         size={100}
@@ -68,8 +73,16 @@ export default function Home() {
         size={100}
         className="absolute  transition-all duration-300 left-20 top-10 animate-spin-slow text-primary "
       />
-      <Skills />
+      <Skills skillsData={data.res.Skills} />
       <InfoAboutMe />
     </Layout>
   )
+}
+
+export default Home
+
+Home.getInitialProps = async () => {
+  const res = await axios.get('http://localhost:8080/Profile')
+
+  return { data: res.data }
 }
