@@ -2,7 +2,7 @@ import React from 'react'
 import { FiActivity } from 'react-icons/fi'
 
 const Header = () => (
-  <header className="h-28 flex flex-col justify-between items-center border-b border-solid mb-6 border-primary">
+  <header className="h-28 flex flex-col justify-between items-center mb-6">
     <h2 className=" mb-2 mt-7 ">
       RUBIK
       <span className="text-layout ">
