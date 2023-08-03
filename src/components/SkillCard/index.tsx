@@ -15,11 +15,11 @@ import {
   SiGit,
 } from 'react-icons/si'
 import { IoLogoPwa } from 'react-icons/io5'
-import { BsDot } from 'react-icons/bs'
 
 import { CgWebsite } from 'react-icons/cg'
 import { TbBrandNextjs } from 'react-icons/tb'
 import { Transition } from '@headlessui/react'
+import { AiFillPushpin } from 'react-icons/ai'
 
 interface IProps {
   title: string
@@ -87,8 +87,11 @@ const SkillCard: React.FC<IProps> = ({ title, rotate, score }) => {
 
   return (
     <div
-      className={`max-w-xs w-full  flex flex-col h-72 justify-evenly shadow-2xl items-center bg-secondary text-background ${rotate} px-6 py-4 rounded-md`}
+      className={`max-w-xs w-full xl:relative   flex flex-col h-72 justify-evenly shadow-2xl items-center bg-secondary text-background ${rotate} px-6 py-4 rounded-md`}
     >
+      <div className="mb-4 hidden xl:block  absolute -top-6 z-50 ">
+        <AiFillPushpin size={30} />
+      </div>
       {icon}
       <h3 className="mt-2">{title}</h3>
       <div className="w-full">

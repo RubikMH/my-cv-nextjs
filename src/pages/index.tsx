@@ -5,7 +5,7 @@ import Layout from '@/containers/Layout'
 import Head from 'next/head'
 import { MdDeveloperMode } from 'react-icons/md'
 
-import { CgWebsite } from 'react-icons/cg'
+import { CgWebsite, CgShapeZigzag } from 'react-icons/cg'
 import { AiFillChrome } from 'react-icons/ai'
 
 import Skills from '@/components/Skills'
@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react'
 import { Toaster, toast } from 'react-hot-toast'
 import { NextPage } from 'next'
 import axios from 'axios'
+import EffectsCards from '@/components/EffectsCards'
 
 const Home: NextPage = (props) => {
   const [online, setOnline] = useState(true)
@@ -62,7 +63,7 @@ const Home: NextPage = (props) => {
       <div className="md:block hidden md:h-10 xl:h-20" />
       <LandingPage data={data.res.Profile} />
 
-      <div className="w-full flex justify-between md:max-w-2xl mx-auto flex-wrap items-center h-52">
+      <div className="w-full flex justify-between xl:mt-4 xl:bg-gradient-to-b xl:from-background xl:via-secondary xl:to-background xl:max-w-full md:max-w-2xl mx-auto flex-wrap items-center h-52">
         <MdDeveloperMode
           className="xl:absolute w-1/2 md:w-1/4   xl:w-28 transition-all duration-300 xl:right-20 top-40 animate-pulse text-primary "
           size={100}
@@ -76,8 +77,26 @@ const Home: NextPage = (props) => {
           size={100}
           className="xl:absolute  w-1/2 md:w-1/4   xl:w-28 transition-all duration-300 xl:left-20 top-10 animate-spin-slow text-primary "
         />
+        <div className="w-full hidden relative z-10 xl:flex ">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 12, 13, 14, 15].map((elm) => (
+            <CgShapeZigzag
+              className={`${
+                elm % 2 === 0
+                  ? 'text-primary rotate-0'
+                  : 'rotate-180 text-background '
+              } `}
+              size={100}
+              key={`icon_zip_${elm}`}
+            />
+          ))}
+        </div>
       </div>
-      <Skills skillsData={data.res.Skills} />
+
+      <div className="w-full relative z-30 ">
+        <EffectsCards />
+
+        <Skills skillsData={data.res.Skills} />
+      </div>
       <InfoAboutMe />
     </Layout>
   )
