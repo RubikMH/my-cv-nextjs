@@ -20,7 +20,7 @@ const InfoAboutMe: React.FC = () => (
         <h3>Contact To RubikMH</h3>
         <div className="w-full xl:relative">
           <code className="my-2 block text-base md:text-xl font-normal md:font-medium">
-            you can contact me with all of Them :
+            you can find me on all the follow up platforms :
           </code>
           <ul className="md:w-1/2 w-full flex flex-wrap">
             <li className="md:w-1/2 w-full text-lg font-light my-1">email:</li>
