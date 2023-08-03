@@ -15,6 +15,7 @@ import {
   SiGit,
 } from 'react-icons/si'
 import { IoLogoPwa } from 'react-icons/io5'
+import { BsDot } from 'react-icons/bs'
 
 import { CgWebsite } from 'react-icons/cg'
 import { TbBrandNextjs } from 'react-icons/tb'
@@ -100,11 +101,22 @@ const SkillCard: React.FC<IProps> = ({ title, rotate, score }) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
+          <div className="flex w-full justify-center items-center">
+            <code className="block text-xl mb-2">Score:</code>
+          </div>
           <div
-            className={'  bg-layout h-5 relative  rounded-md   '}
-            style={{ width: `${score}%` }}
+            className={'  bg-layout h-5  w-full rounded-md   '}
             title={`my score is ${score}`}
-          />
+          >
+            <div
+              className="h-5 bg-background relative flex items-center "
+              style={{ width: `${score}%` }}
+            >
+              <div className="w-8 h-8 p-1.5 -right-1 bg-background absolute flex flex-col items-center justify-start text-primary rounded-full">
+                {icon}
+              </div>
+            </div>
+          </div>
           <div className="w-full flex justify-between items-center">
             <span className="block">0</span>
             <span className="block">100</span>
