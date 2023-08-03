@@ -45,7 +45,7 @@ const InfoAboutMe: React.FC = () => (
             </li>
           </ul>
           <GiAstronautHelmet
-            className="absolute hidden md:block right-10 xl:right-20 bottom-32 xl:top-10"
+            className="absolute text-secondary hidden md:block right-10 xl:right-20 bottom-32 xl:top-10"
             size={150}
           />
         </div>
