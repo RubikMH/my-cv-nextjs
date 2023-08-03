@@ -4,7 +4,7 @@
 /* eslint-disable no-var */
 /* eslint-disable no-restricted-globals */
 var CACHE_NAME = 'service-worker-for-rubikmh-v2'
-var urlsToCache = ['/', '/favicon.ico']
+var urlsToCache = ['/', '/favicon.ico', 'http://localhost:8080']
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

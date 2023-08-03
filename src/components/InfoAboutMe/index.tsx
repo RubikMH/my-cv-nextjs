@@ -10,7 +10,7 @@ const InfoAboutMe: React.FC = () => (
     </div>
     <div className=" px-6 py-4 h-[30rem] w-3/4 relative bg-cover rounded-md">
       <div className="text-justify ">
-        <h3>RubikMH</h3>
+        <h3>Contact To RubikMH</h3>
         <code className="text-justify">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
           praesentium expedita aliquam maiores! Voluptatum possimus quas a
