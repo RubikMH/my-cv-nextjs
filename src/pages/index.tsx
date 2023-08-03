@@ -86,7 +86,7 @@ const Home: NextPage = (props) => {
 export default Home
 
 Home.getInitialProps = async () => {
-  const res = await axios.get('http://localhost:8080/Profile')
+  const res = await axios.get('http://159.69.5.177:8080/Profile')
 
   return { data: res.data }
 }

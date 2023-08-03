@@ -33,7 +33,7 @@ const Skills: React.FC<{ skillsData: Array<any> }> = ({ skillsData = [] }) => (
               alignItems: 'center',
             }}
           >
-            <SkillCard rotate="rotate-0" title={elm.Title} />
+            <SkillCard rotate="rotate-0" score={elm.Scores} title={elm.Title} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -67,6 +67,7 @@ const Skills: React.FC<{ skillsData: Array<any> }> = ({ skillsData = [] }) => (
           >
             <SkillCard
               rotate="rotate-0"
+              score={elm.Scores}
               title={elm.Title}
               // icons={<FaReact size={60} className="hover:animate-pulse " />}
             />
@@ -102,6 +103,7 @@ const Skills: React.FC<{ skillsData: Array<any> }> = ({ skillsData = [] }) => (
             }}
           >
             <SkillCard
+              score={elm.Scores}
               rotate="rotate-0"
               title={elm.Title}
               // icons={<FaReact size={60} className="hover:animate-pulse " />}
