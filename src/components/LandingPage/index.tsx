@@ -1,7 +1,7 @@
 import React from 'react'
 
 const LandingPage: React.FC<{ data: any }> = ({ data }) => (
-  <div className="md:max-w-2xl xl:max-w-5xl max-w-xs w-full   mx-auto p-8 flex-col flex xl:flex-row justify-evenly bg-layout shadow-2xl rounded-md ">
+  <div className="md:max-w-2xl xl:max-w-5xl max-w-xs sm:max-w-lg w-full   mx-auto p-8 flex-col flex xl:flex-row justify-evenly bg-layout shadow-2xl rounded-md ">
     <div className="xl:w-1/2 w-full flex xl:flex-col justify-center">
       <img
         src={data.image}
